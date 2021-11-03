@@ -14,7 +14,7 @@
             "email": "husseinhewehii@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
         "php": "^7.2",
         "laravel/framework": "^5.6|^6.0|^7.0|^8.40"
