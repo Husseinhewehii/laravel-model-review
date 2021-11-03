@@ -4,9 +4,12 @@
 [![Latest Unstable Version](https://poser.pugx.org/dgvai/laravel-user-review/v/unstable)](https://packagist.org/packages/dgvai/laravel-user-review)
 [![License](https://poser.pugx.org/dgvai/laravel-user-review/license)](https://packagist.org/packages/dgvai/laravel-user-review)
 
-This package uses a trait for a model which can be reviewable by users and give starred/point ratings and only one reply can come from admin as a support response. (like Google playstore review system). This package can be used with any projects like Ecommerce, Shop, Store, etc models. 
+This package is derived from **Jalal Uddin**'s beautiful package [Github](https://github.com/dgvai-git) | [Linked-in](https://linkedin.com/in/dgvai) | [Facebook](https://facebook.com/dgvai.hridoy)
+which provides the ability for user to make review to any model on the system with rates and comments,
+with the privilege to the user to make more than one review to the same model.
 
-> Author: **Jalal Uddin** [Github](https://github.com/dgvai-git) | [Linked-in](https://linkedin.com/in/dgvai) | [Facebook](https://facebook.com/dgvai.hridoy)
+I took it an added a new functionality which aligns with systems that allow users to make only one review to a model or update it.
+
 
 ## Requirements
 <ul>
@@ -17,12 +20,12 @@ This package uses a trait for a model which can be reviewable by users and give 
 ## Installation
 > using COMPOSER
 
-`` composer require dgvai/laravel-user-review``
+`` composer require hewehi/laravel-model-review``
 
 ## Configurations
 > Export the assets (migration and config)
 
-``php artisan vendor:publish --provider="DGvai\Review\ReviewerServiceProvider" ``
+``php artisan vendor:publish --provider="Hewehi\ModelReview\ModelReviewServiceProvider" ``
 
 > Run the migration
 
@@ -39,7 +42,7 @@ Add ``Reviewable`` trait to the model where you want users to give review and ra
 <?php 
 namespace App;
 
-use DGvai\Review\Reviewable;
+use Hewehi\ModelReview\Reviewable;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
@@ -55,7 +58,10 @@ class Product extends Model
 ### Creating review for a product:
 > Description
 
-``makeReview(object $user, int $rating [, string $review])``
+``makeReview(object $user, int $rating , string $comment)``
+``makeOrUpdateReview(object $user, int $rating , string $comment)``
+
+``comment is optional``
 
 > Returns
 
@@ -67,7 +73,11 @@ class Product extends Model
     $product = Product::find($id);
     $user = auth()->user();
 
-    $product->makeReview($user,3,'Very good product!');
+    //user can add new review to this product even they have one
+    $product->makeReview($user, 3, 'optional comment');
+
+    //user can only update their review to this product or create a new one if they don't have any reviews yet
+    $product->makeOrUpdateReview($user, 3, 'optional comment');
 ```
 
 ### Review attributes
@@ -115,15 +125,15 @@ class Product extends Model
     */
 
     // Get all reviews of all products
-    $reviews = DGvai\Review\Review::all();              // all reviews
-    $reviews = DGvai\Review\Review::active()->get();    // all active reviews
-    $reviews = DGvai\Review\Review::inactive()->get();  // all inactive reviews
-    $reviews = DGvai\Review\Review::daily()->get();     // all daily reviews
-    $reviews = DGvai\Review\Review::monthly()->get();   // all monthly reviews
-    $reviews = DGvai\Review\Review::yearly()->get();    // all yearly reviews
+    $reviews = Hewehi\ModelReview\Review::all();              // all reviews
+    $reviews = Hewehi\ModelReview\Review::active()->get();    // all active reviews
+    $reviews = Hewehi\ModelReview\Review::inactive()->get();  // all inactive reviews
+    $reviews = Hewehi\ModelReview\Review::daily()->get();     // all daily reviews
+    $reviews = Hewehi\ModelReview\Review::monthly()->get();   // all monthly reviews
+    $reviews = Hewehi\ModelReview\Review::yearly()->get();    // all yearly reviews
 
     // You can also chain these methods
-    $reviews = DGvai\Review\Review::monthly()->active()->get();  // get aa monthly active reviews
+    $reviews = Hewehi\ModelReview\Review::monthly()->active()->get();  // get aa monthly active reviews
 
     // Get reviews of a product
     $product->reviews();
@@ -158,5 +168,3 @@ class Product extends Model
     $review->makeInactive();
 
 ```
-
-> Till now that's it! Updates will bring new features soon InshaAllah.

@@ -1,5 +1,5 @@
 {
-    "name": "hewehi/model-review",
+    "name": "hewehi/laravel-model-review",
     "description": "User Create Reviews with rates and comments to any model",
     "type": "library",
     "license": "MIT",
@@ -15,10 +15,5 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
-    "autoload": {
-        "psr-4": {
-            "Hewehi\\ModelReview\\": "src"
-        }
-    }
+    "require": {}
 }
