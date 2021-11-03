@@ -1,0 +1,24 @@
+{
+    "name": "hewehi/model-review",
+    "description": "User Create Reviews with rates and comments to any model",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Hewehi\\ModelReview\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Hussein El-Hewehii",
+            "email": "husseinhewehii@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Hewehi\\ModelReview\\": "src"
+        }
+    }
+}
