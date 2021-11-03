@@ -5,10 +5,10 @@
 [![License](https://poser.pugx.org/dgvai/laravel-user-review/license)](https://packagist.org/packages/dgvai/laravel-user-review)
 
 This package is derived from **Jalal Uddin**'s beautiful package [Github](https://github.com/dgvai-git) | [Linked-in](https://linkedin.com/in/dgvai) | [Facebook](https://facebook.com/dgvai.hridoy)
-which provides the ability for user to make review to any model on the system with rates and comments,
-with the privilege to the user to make more than one review to the same model.
+which provides the ability for user to make review on any model on the system with rates and comments,
+with the privilege to the user to make more than one review on the same model.
 
-I took it an added a new functionality which aligns with systems that allow users to make only one review to a model or update it.
+I took it an added a new functionality which aligns with systems that allow users to make only one review on a model or update it.
 
 
 ## Requirements
@@ -59,6 +59,7 @@ class Product extends Model
 > Description
 
 ``makeReview(object $user, int $rating , string $comment)``
+
 ``makeOrUpdateReview(object $user, int $rating , string $comment)``
 
 ``comment is optional``
@@ -73,10 +74,10 @@ class Product extends Model
     $product = Product::find($id);
     $user = auth()->user();
 
-    //user can add new review to this product even they have one
+    //user can add new review on this product even they have one
     $product->makeReview($user, 3, 'optional comment');
 
-    //user can only update their review to this product or create a new one if they don't have any reviews yet
+    //user can only update their review on this product or create a new one if they don't have any reviews yet
     $product->makeOrUpdateReview($user, 3, 'optional comment');
 ```
 
