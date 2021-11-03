@@ -9,7 +9,7 @@ which provides the ability for user to make review on any model on the system wi
 with the privilege to the user to make more than one review on the same model.
 
 I took it an added a new functionality which aligns with systems that allow users to make only one review on a model or update it.
-[Linked-in](https://www.linkedin.com/in/hussein-el-hewehii-768b5a113/)
+
 
 
 ## Requirements
@@ -170,3 +170,6 @@ class Product extends Model
     $review->makeInactive();
 
 ```
+
+### My LinkedIn
+[Linked-in](https://www.linkedin.com/in/hussein-el-hewehii-768b5a113/)
