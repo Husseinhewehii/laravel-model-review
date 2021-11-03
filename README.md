@@ -1,8 +1,8 @@
 # Model-Review: Laravel Package
-[![Latest Stable Version](https://poser.pugx.org/dgvai/laravel-user-review/v/stable)](https://packagist.org/packages/dgvai/laravel-user-review)
-[![Total Downloads](https://poser.pugx.org/dgvai/laravel-user-review/downloads)](https://packagist.org/packages/dgvai/laravel-user-review)
-[![Latest Unstable Version](https://poser.pugx.org/dgvai/laravel-user-review/v/unstable)](https://packagist.org/packages/dgvai/laravel-user-review)
-[![License](https://poser.pugx.org/dgvai/laravel-user-review/license)](https://packagist.org/packages/dgvai/laravel-user-review)
+[![Latest Stable Version](https://poser.pugx.org/dgvai/laravel-user-review/v/stable)](https://packagist.org/packages/hewehi/laravel-model-review)
+[![Total Downloads](https://poser.pugx.org/dgvai/laravel-user-review/downloads)](https://packagist.org/packages/hewehi/laravel-model-review)
+[![Latest Unstable Version](https://poser.pugx.org/dgvai/laravel-user-review/v/unstable)](https://packagist.org/packages/hewehi/laravel-model-review)
+[![License](https://poser.pugx.org/dgvai/laravel-user-review/license)](https://packagist.org/packages/hewehi/laravel-model-review)
 
 This package is derived from **Jalal Uddin**'s beautiful package [Github](https://github.com/dgvai-git) | [Linked-in](https://linkedin.com/in/dgvai) | [Facebook](https://facebook.com/dgvai.hridoy)
 which provides the ability for user to make review on any model on the system with rates and comments,
