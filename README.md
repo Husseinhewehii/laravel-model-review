@@ -22,20 +22,29 @@ I took it an added a new functionality which aligns with systems that allow user
 ## Installation
 > using COMPOSER
 
-`` composer require hewehi/laravel-model-review``
+``` bash
+composer require hewehi/laravel-model-review
+```
 
 ## Configurations
 > Export the assets (migration and config)
 
-``php artisan vendor:publish --provider="Hewehi\ModelReview\ModelReviewServiceProvider" ``
+``` bash
+php artisan vendor:publish --provider="Hewehi\ModelReview\ModelReviewServiceProvider"
+```
+
 
 > Run the migration
 
-``php artisan migrate``
+``` bash
+php artisan migrate
+```
 
 > Clear configuration cache
 
-``php artisan config:cache``
+``` bash
+php artisan config:cache
+```
 
 ## Usage
 Add ``Reviewable`` trait to the model where you want users to give review and ratings. As example for **Product Model** 
